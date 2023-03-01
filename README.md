@@ -1,2 +1,2 @@
 # Aspirin
- A load-time profiler for 1.7.10
+A load-time profiler for 1.7.10
