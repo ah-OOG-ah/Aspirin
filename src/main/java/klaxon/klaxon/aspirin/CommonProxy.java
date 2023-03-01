@@ -1,4 +1,4 @@
-package com.myname.mymodid;
+package klaxon.klaxon.aspirin;
 
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;

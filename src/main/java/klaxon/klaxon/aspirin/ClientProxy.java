@@ -1,4 +1,4 @@
-package com.myname.mymodid;
+package klaxon.klaxon.aspirin;
 
 public class ClientProxy extends CommonProxy {
 
