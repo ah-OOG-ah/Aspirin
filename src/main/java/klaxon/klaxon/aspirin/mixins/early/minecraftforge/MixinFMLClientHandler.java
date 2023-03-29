@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import cpw.mods.fml.client.FMLClientHandler;
 
 @Mixin(FMLClientHandler.class)
-public class MixinBeginMCLoading {
+public class MixinFMLClientHandler {
 
     // Log the time of FMLClientHandler.instance().beginMinecraftLoading
     @Inject(method = "beginMinecraftLoading", at = @At(value = "HEAD"), remap = false)
@@ -25,6 +25,6 @@ public class MixinBeginMCLoading {
         long time = System.nanoTime();
         long delta = time - Timer.START;
         Timer.TIMES.put("on beginMinecraftLoading", delta);
-        Aspirin.LOG.info("beginMinecraftLoading called at {} ms", delta / 1_000_000L);
+        Aspirin.MIXIN_LOG("beginMinecraftLoading called at " + (delta / 1_000_000L) + " ms");
     }
 }

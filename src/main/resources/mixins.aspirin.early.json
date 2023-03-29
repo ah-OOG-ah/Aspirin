@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8.5-GTNH",
-  "package": "klaxon.klaxon.aspirin.mixins",
+  "package": "klaxon.klaxon.aspirin.mixins.early",
   "refmap": "mixins.aspirin.refmap.json",
   "target": "@env(DEFAULT)",
   "compatibilityLevel": "JAVA_8"

@@ -12,9 +12,9 @@ public enum Mixins {
 
     TIMER_START(new Builder("Start the launch timer").setSide(Side.CLIENT).setApplyIf(() -> true)
             .addTargetedMod(TargetedMod.VANILLA).setPhase(Phase.EARLY).addMixinClasses("minecraft.MixinLaunchTracker")),
-    TIMER_BEGIN_MCL(new Builder("Start BMCL timer").setSide(Side.CLIENT).setApplyIf(() -> true)
+    TIMER_BEGIN_MCL(new Builder("Run FMLClienthandler timers").setSide(Side.CLIENT).setApplyIf(() -> true)
             .addTargetedMod(TargetedMod.VANILLA).setPhase(Phase.EARLY)
-            .addMixinClasses("minecraftforge.MixinBeginMCLoading"));
+            .addMixinClasses("minecraftforge.MixinFMLClientHandler"));
 
     public final String name;
     public final List<String> mixinClasses;

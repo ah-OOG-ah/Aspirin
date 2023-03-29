@@ -18,6 +18,6 @@ public class MixinLaunchTracker {
     private static void aspirinOnMain(String[] p_main_0_, CallbackInfo ci) {
 
         Timer.START = System.nanoTime();
-        Aspirin.LOG.info("Profiling started! Main.main() called!");
+        Aspirin.MIXIN_LOG("Profiling started! Main.main() called!");
     }
 }

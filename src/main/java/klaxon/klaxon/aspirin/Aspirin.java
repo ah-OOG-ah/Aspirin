@@ -15,6 +15,10 @@ public class Aspirin {
 
     public static final Logger LOG = LogManager.getLogger(Tags.MODID);
 
+    public static void MIXIN_LOG(String msg) {
+        LOG.info("[Aspirin Mixins] {}", msg);
+    }
+
     @SidedProxy(clientSide = "klaxon.klaxon.aspirin.ClientProxy", serverSide = "klaxon.klaxon.aspirin.CommonProxy")
     public static CommonProxy proxy;
 
