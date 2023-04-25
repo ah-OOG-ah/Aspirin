@@ -2,10 +2,10 @@ package klaxon.klaxon.aspirin.mixinhandler;
 
 import java.util.*;
 
-import klaxon.klaxon.aspirin.Aspirin;
-
 import com.gtnewhorizon.gtnhmixins.IEarlyMixinLoader;
+
 import cpw.mods.fml.relauncher.IFMLLoadingPlugin;
+import klaxon.klaxon.aspirin.Aspirin;
 
 @IFMLLoadingPlugin.MCVersion("1.7.10")
 @IFMLLoadingPlugin.SortingIndex(42000) // no idea if this is important

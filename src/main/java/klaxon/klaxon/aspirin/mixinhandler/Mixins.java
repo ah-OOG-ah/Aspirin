@@ -11,10 +11,13 @@ import cpw.mods.fml.relauncher.FMLLaunchHandler;
 public enum Mixins {
 
     TIMER_START(new Builder("Start the launch timer").setSide(Side.CLIENT).setApplyIf(() -> true)
-            .addTargetedMod(TargetedMod.VANILLA).setPhase(Phase.EARLY).addMixinClasses("minecraft.MixinLaunchTracker")),
-    TIMER_BEGIN_MCL(new Builder("Run FMLClienthandler timers").setSide(Side.CLIENT).setApplyIf(() -> true)
+            .addTargetedMod(TargetedMod.VANILLA).setPhase(Phase.EARLY).addMixinClasses("minecraft.MixinMainClient")),
+    FMLCH_TIMERS(new Builder("Run FMLClienthandler timers").setSide(Side.CLIENT).setApplyIf(() -> true)
             .addTargetedMod(TargetedMod.VANILLA).setPhase(Phase.EARLY)
-            .addMixinClasses("minecraftforge.MixinFMLClientHandler"));
+            .addMixinClasses("minecraftforge.MixinFMLClientHandler")),
+    MCCLIENT_TIMERS(new Builder("Run Minecraft client timers").setSide(Side.CLIENT).setApplyIf(() -> true)
+            .addTargetedMod(TargetedMod.VANILLA).setPhase(Phase.EARLY)
+            .addMixinClasses("minecraft.MixinMinecraftClient"));
 
     public final String name;
     public final List<String> mixinClasses;
