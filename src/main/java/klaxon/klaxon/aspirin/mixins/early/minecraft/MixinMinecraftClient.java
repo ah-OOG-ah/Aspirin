@@ -36,8 +36,7 @@ public class MixinMinecraftClient {
             at = @At(
                     value = "INVOKE",
                     target = "Lcpw/mods/fml/client/FMLClientHandler;onInitializationComplete()V",
-                    remap = false),
-            remap = false)
+                    remap = false))
     public void aspirinAfterBeginMCLoading(CallbackInfo ci) {
 
         // Get the time delta the last step took and the time at which this one started

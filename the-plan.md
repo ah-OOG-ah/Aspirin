@@ -80,7 +80,7 @@ Objective: Find where to best inject timers so profiling can actually happen.
 <ol>
 <li>Client:
   <ul>
-    <li>[x] Start the timer
+    <li>[x] Phase -2: Start the timer (Main.main())
     <li>[x] Phase -1: Begin MC Loading
     <li>[x] Phase 0: Constructing Mods
     <li>[x] Phase 1: Pre-initialization
@@ -90,10 +90,10 @@ Objective: Find where to best inject timers so profiling can actually happen.
 </li>
 <li>Server:
   <ul>
-    <li>[ ] Start the timer
-    <li>[ ] Phase -1: Begin MC Loading
-    <li>[ ] Phase 0: Constructing Mods
-    <li>[ ] Phase 1: Pre-initialization
+    <li>[x] Start the timer
+    <li><s>[ ]</s> Phase -1: Begin MC Loading (this hook is irrelevant serverside AFAICT)
+    <li>[x] Phase 0: Constructing Mods
+    <li>[x] Phase 1: Pre-initialization
     <li>[ ] Phase 2: Initialization
     <li>[ ] Stop the timer
   </ul>
