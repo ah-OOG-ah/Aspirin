@@ -20,9 +20,9 @@ public enum Mixins {
             .addMixinClasses("minecraft.MixinMinecraftClient")),
     MC_SERVER_TIMERS(new Builder("Timer injection to MinecraftServer").setSide(Side.SERVER).setApplyIf(() -> true)
             .addTargetedMod(TargetedMod.VANILLA).setPhase(Phase.EARLY)
-            .addMixinClasses("minecraft.MixinMinecraftServer")),
+            .addMixinClasses("minecraft.MixinMinecraftServer"));/*
     LOADER_TIMERS(new Builder("Inject timers into Loader").setSide(Side.SERVER).setApplyIf(() -> true)
-            .addTargetedMod(TargetedMod.VANILLA).setPhase(Phase.EARLY).addMixinClasses("fml.MixinLoader"));
+            .addTargetedMod(TargetedMod.VANILLA).setPhase(Phase.EARLY).addMixinClasses("fml.MixinLoader"));*/
 
     public final String name;
     public final List<String> mixinClasses;
