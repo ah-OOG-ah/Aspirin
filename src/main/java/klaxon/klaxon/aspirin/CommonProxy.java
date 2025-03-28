@@ -1,30 +1,11 @@
 package klaxon.klaxon.aspirin;
 
-import net.minecraft.client.Minecraft;
-
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.event.FMLServerStartingEvent;
+import klaxon.klaxon.aspirin.mixinhandler.AspirinCore;
 
 public class CommonProxy {
-
-    // preInit "Run before anything else. Read your config, create blocks, items, etc, and register them with the
-    // GameRegistry." (Remove if not needed)
-    public void preInit(FMLPreInitializationEvent event) {
-        Config.synchronizeConfiguration(event.getSuggestedConfigurationFile());
-
-        Aspirin.LOG.info(Config.greeting);
-        Aspirin.LOG.info("I am " + Tags.MODNAME + " at version " + Tags.VERSION);
-        Aspirin.LOG.info(Minecraft.getMinecraft().getSession().getPlayerID());
+    public void preInit(FMLPreInitializationEvent ignored) {
+        AspirinCore.LOG.info("Aspirin is a non-steroidal anti-inflammatory agent and a strong blood thinner.");
+        AspirinCore.LOG.info("Don't take this with alcohol!");
     }
-
-    // load "Do your mod setup. Build whatever data structures you care about. Register recipes." (Remove if not needed)
-    public void init(FMLInitializationEvent event) {}
-
-    // postInit "Handle interaction with other mods, complete your setup based on this." (Remove if not needed)
-    public void postInit(FMLPostInitializationEvent event) {}
-
-    // register server commands in this event handler (Remove if not needed)
-    public void serverStarting(FMLServerStartingEvent event) {}
 }

@@ -1,15 +1,23 @@
 package klaxon.klaxon.aspirin.mixinhandler;
 
-import java.util.*;
+import static klaxon.klaxon.aspirin.Aspirin.MODNAME;
 
 import com.gtnewhorizon.gtnhmixins.IEarlyMixinLoader;
-
 import cpw.mods.fml.relauncher.IFMLLoadingPlugin;
-import klaxon.klaxon.aspirin.Aspirin;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 @IFMLLoadingPlugin.MCVersion("1.7.10")
 @IFMLLoadingPlugin.SortingIndex(42000) // no idea if this is important
 public class AspirinCore implements IFMLLoadingPlugin, IEarlyMixinLoader {
+
+    public static final Logger LOG = LogManager.getLogger(MODNAME);
+    public static final Logger MIXIN_LOG = LogManager.getLogger(MODNAME + " Mixins");
 
     // The mixin config JSON
     @Override
@@ -34,7 +42,7 @@ public class AspirinCore implements IFMLLoadingPlugin, IEarlyMixinLoader {
                 }
             }
         }
-        Aspirin.LOG.info("Not loading the following EARLY mixins: {}", notLoading.toString());
+        LOG.info("Not loading the following EARLY mixins: {}", notLoading.toString());
         return mixins;
     }
 

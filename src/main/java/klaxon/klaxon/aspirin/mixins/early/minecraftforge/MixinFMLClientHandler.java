@@ -1,12 +1,12 @@
 package klaxon.klaxon.aspirin.mixins.early.minecraftforge;
 
+import klaxon.klaxon.aspirin.mixinhandler.AspirinCore;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import cpw.mods.fml.client.FMLClientHandler;
-import klaxon.klaxon.aspirin.Aspirin;
 import klaxon.klaxon.aspirin.Timer;
 
 @Mixin(FMLClientHandler.class)
@@ -18,8 +18,8 @@ public class MixinFMLClientHandler {
 
         // Get the time delta the last step took and the time at which this one started
         long delta = Timer.logPhase("beginMinecraftLoading");
-        Aspirin.MIXIN_LOG(Timer.TIMES.get(Timer.INDEX - 2).getLeft() + " took " + (delta / 1_000_000L) + " ms");
-        Aspirin.MIXIN_LOG("Phase -1 began; beginMinecraftLoading called at " + (delta / 1_000_000L) + " ms");
+        AspirinCore.MIXIN_LOG.info(Timer.TIMES.get(Timer.INDEX - 2).getLeft() + " took " + (delta / 1_000_000L) + " ms");
+        AspirinCore.MIXIN_LOG.info("Phase -1 began; beginMinecraftLoading called at " + (delta / 1_000_000L) + " ms");
     }
 
     // Log when loadMods() is called (Phase -1 | Phase 0)
@@ -33,8 +33,8 @@ public class MixinFMLClientHandler {
         long delta = Timer.logPhase("Constructing mods");
         Timer.SHIFT = -Timer.INDEX;
         long previousDelta = delta - Timer.TIMES.get(Timer.INDEX - 2).getRight();
-        Aspirin.MIXIN_LOG(Timer.TIMES.get(Timer.INDEX - 2).getLeft() + " took " + (previousDelta / 1_000_000L) + " ms");
-        Aspirin.MIXIN_LOG("Phase 0: Constructing Mods began; loadMods called at " + (delta / 1_000_000L) + " ms");
+        AspirinCore.MIXIN_LOG.info(Timer.TIMES.get(Timer.INDEX - 2).getLeft() + " took " + (previousDelta / 1_000_000L) + " ms");
+        AspirinCore.MIXIN_LOG.info("Phase 0: Constructing Mods began; loadMods called at " + (delta / 1_000_000L) + " ms");
     }
 
     // Log when preinitializeMods() is called (Phase 0 | Phase 1)
@@ -47,8 +47,7 @@ public class MixinFMLClientHandler {
         // Get the time delta the last step took and the time at which this one started
         long delta = Timer.logPhase("Pre-initialization");
         long previousDelta = delta - Timer.TIMES.get(Timer.INDEX - 2).getRight();
-        Aspirin.MIXIN_LOG(Timer.TIMES.get(Timer.INDEX - 2).getLeft() + " took " + (previousDelta / 1_000_000L) + " ms");
-        Aspirin.MIXIN_LOG(
-                "Phase 1: Pre-initialization began; preinitializeMods called at " + (delta / 1_000_000L) + " ms");
+        AspirinCore.MIXIN_LOG.info(Timer.TIMES.get(Timer.INDEX - 2).getLeft() + " took " + (previousDelta / 1_000_000L) + " ms");
+        AspirinCore.MIXIN_LOG.info("Phase 1: Pre-initialization began; preinitializeMods called at " + (delta / 1_000_000L) + " ms");
     }
 }
