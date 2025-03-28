@@ -21,8 +21,12 @@ public enum Mixins {
     MC_SERVER_TIMERS(new Builder("Timer injection to MinecraftServer").setSide(Side.SERVER).setApplyIf(() -> true)
             .addTargetedMod(TargetedMod.VANILLA).setPhase(Phase.EARLY)
             .addMixinClasses("minecraft.MixinMinecraftServer"));/*
-    LOADER_TIMERS(new Builder("Inject timers into Loader").setSide(Side.SERVER).setApplyIf(() -> true)
-            .addTargetedMod(TargetedMod.VANILLA).setPhase(Phase.EARLY).addMixinClasses("fml.MixinLoader"));*/
+                                                                 * LOADER_TIMERS(new
+                                                                 * Builder("Inject timers into Loader").setSide(Side.
+                                                                 * SERVER).setApplyIf(() -> true)
+                                                                 * .addTargetedMod(TargetedMod.VANILLA).setPhase(Phase.
+                                                                 * EARLY).addMixinClasses("fml.MixinLoader"));
+                                                                 */
 
     public final String name;
     public final List<String> mixinClasses;

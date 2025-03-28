@@ -31,12 +31,10 @@
 dependencies {
 
     // Test in full pack, almost
-    runtimeOnly("com.github.GTNewHorizons:NewHorizonsCoreMod:2.1.94:dev")
-    //runtimeOnly("com.github.GTNewHorizons:TecTech:5.2.38:dev")
-    runtimeOnly("com.github.GTNewHorizons:bartworks:0.7.36:dev")
+    runtimeOnly("com.github.GTNewHorizons:NewHorizonsCoreMod:2.7.141:dev")
 
     // Dirty hacks for RFG
     //runtimeOnly("net.industrial-craft:industrialcraft-2:2.2.828-experimental:dev")
-    //runtimeOnly("com.github.GTNewHorizons:lwjgl3ify:1.4.0:dev")
-    //runtimeOnly("com.github.GTNewHorizons:Hodgepodge:2.2.26:dev")
+    //runtimeOnly("com.github.GTNewHorizons:lwjgl3ify:2.1.11:dev")
+    //runtimeOnly("com.github.GTNewHorizons:Hodgepodge:2.6.31:dev")
 }

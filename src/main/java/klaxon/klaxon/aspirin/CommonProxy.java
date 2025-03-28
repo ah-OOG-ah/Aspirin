@@ -1,5 +1,7 @@
 package klaxon.klaxon.aspirin;
 
+import net.minecraft.client.Minecraft;
+
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
@@ -14,6 +16,7 @@ public class CommonProxy {
 
         Aspirin.LOG.info(Config.greeting);
         Aspirin.LOG.info("I am " + Tags.MODNAME + " at version " + Tags.VERSION);
+        Aspirin.LOG.info(Minecraft.getMinecraft().getSession().getPlayerID());
     }
 
     // load "Do your mod setup. Build whatever data structures you care about. Register recipes." (Remove if not needed)
