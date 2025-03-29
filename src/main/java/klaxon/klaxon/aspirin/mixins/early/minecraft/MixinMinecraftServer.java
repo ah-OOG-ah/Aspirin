@@ -10,6 +10,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import klaxon.klaxon.aspirin.Timer;
 
+@SuppressWarnings("UnusedMixin")
 @Mixin(MinecraftServer.class)
 public class MixinMinecraftServer {
 
